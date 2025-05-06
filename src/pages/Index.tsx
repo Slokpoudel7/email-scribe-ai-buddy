@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import Header from "@/components/Header";
 import EmailFormSection from "@/components/EmailFormSection";
@@ -9,6 +8,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hasApiKey } from "@/lib/apiKeyStorage";
+import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
 
 const Index = () => {
   // Form state
@@ -121,9 +121,29 @@ const Index = () => {
       
       <footer className="py-6 border-t bg-white">
         <div className="container">
-          <p className="text-sm text-center text-gray-500">
-            &copy; {new Date().getFullYear()} Email Scribe - AI Email Assistant
-          </p>
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <p className="text-sm text-gray-500">
+              &copy; {new Date().getFullYear()} Email Scribe - AI Email Assistant
+            </p>
+            <div className="flex items-center space-x-4">
+              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+                <Facebook size={20} />
+                <span className="sr-only">Facebook</span>
+              </a>
+              <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+                <Twitter size={20} />
+                <span className="sr-only">Twitter</span>
+              </a>
+              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+                <Instagram size={20} />
+                <span className="sr-only">Instagram</span>
+              </a>
+              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+                <Linkedin size={20} />
+                <span className="sr-only">LinkedIn</span>
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
