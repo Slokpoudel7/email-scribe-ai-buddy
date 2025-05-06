@@ -8,7 +8,7 @@ import { Dialog, DialogContent } from "@/components/ui/dialog";
 import { Settings } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { hasApiKey } from "@/lib/apiKeyStorage";
-import { Facebook, Twitter, Instagram, Linkedin } from "lucide-react";
+import { Facebook, Twitter, Instagram, Linkedin, Youtube } from "lucide-react";
 
 const Index = () => {
   // Form state
@@ -141,6 +141,10 @@ const Index = () => {
               <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
                 <Linkedin size={20} />
                 <span className="sr-only">LinkedIn</span>
+              </a>
+              <a href="https://youtube.com/@atheistfff?si=X6sGW-1ATEFjm6d2" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+                <Youtube size={20} />
+                <span className="sr-only">YouTube</span>
               </a>
             </div>
           </div>
