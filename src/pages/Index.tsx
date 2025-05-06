@@ -126,7 +126,7 @@ const Index = () => {
               &copy; {new Date().getFullYear()} Email Scribe - AI Email Assistant
             </p>
             <div className="flex items-center space-x-4">
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+              <a href="https://www.facebook.com/share/15WJNPfE9R/" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
                 <Facebook size={20} />
                 <span className="sr-only">Facebook</span>
               </a>
@@ -134,7 +134,7 @@ const Index = () => {
                 <Twitter size={20} />
                 <span className="sr-only">Twitter</span>
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
+              <a href="https://www.instagram.com/slokpoudel7/?utm_source=ig_web_button_share_sheet" target="_blank" rel="noopener noreferrer" className="text-gray-500 hover:text-brand-600 transition-colors">
                 <Instagram size={20} />
                 <span className="sr-only">Instagram</span>
               </a>
