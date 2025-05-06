@@ -3,7 +3,12 @@ import React, { useState } from "react";
 import Header from "@/components/Header";
 import EmailFormSection from "@/components/EmailFormSection";
 import EmailOutputSection from "@/components/EmailOutputSection";
+import ApiKeySettings from "@/components/ApiKeySettings";
 import { generateEmail, type EmailParams, type EmailOutput } from "@/lib/emailGenerator";
+import { Dialog, DialogContent } from "@/components/ui/dialog";
+import { Settings } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { hasApiKey } from "@/lib/apiKeyStorage";
 
 const Index = () => {
   // Form state
@@ -18,6 +23,9 @@ const Index = () => {
   const [subjectLine, setSubjectLine] = useState<string>("");
   const [emailBody, setEmailBody] = useState<string>("");
   const [isGenerating, setIsGenerating] = useState<boolean>(false);
+  
+  // API key dialog state
+  const [isApiKeyDialogOpen, setIsApiKeyDialogOpen] = useState<boolean>(false);
 
   const handleGenerate = async () => {
     if (!purpose) {
@@ -53,6 +61,18 @@ const Index = () => {
       <Header />
       
       <main className="flex-1 container py-8 md:py-12">
+        <div className="flex justify-between items-center mb-6">
+          <h2 className="text-2xl font-bold text-brand-800">Email Generator</h2>
+          <Button 
+            variant="outline" 
+            className="flex items-center gap-2" 
+            onClick={() => setIsApiKeyDialogOpen(true)}
+          >
+            <Settings size={16} />
+            {hasApiKey() ? "API Settings" : "Set API Key"}
+          </Button>
+        </div>
+        
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
           <div>
             <h2 className="text-2xl font-bold mb-6 text-brand-800">Create Your Email</h2>
@@ -92,6 +112,12 @@ const Index = () => {
           </p>
         </div>
       </main>
+      
+      <Dialog open={isApiKeyDialogOpen} onOpenChange={setIsApiKeyDialogOpen}>
+        <DialogContent className="sm:max-w-md">
+          <ApiKeySettings onClose={() => setIsApiKeyDialogOpen(false)} />
+        </DialogContent>
+      </Dialog>
       
       <footer className="py-6 border-t bg-white">
         <div className="container">
